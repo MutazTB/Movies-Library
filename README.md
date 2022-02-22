@@ -11,18 +11,39 @@ Add an image of your WRRC here
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 1- Create server.js file
 
-2- npm init -y
+2- npm install express
 
-3- npm install express
+3- 
 
-4- const express = require("express")
+4- app.listen(PORT, ()=>{ console.log("Anything") })
 
-5- const app = express()
+5- I can create end points (ex: app.get("/", homeHandler))
 
-6- app.listen(PORT, ()=>{ console.log("Anything") })
-
-7- I can create end points (ex: app.get("/", helloWorldHandler))
-
-8- I will create the function for that end point(ex: helloWorldHandler)
+6- I will create the function for that end point(ex: homeHandler)
 ## Project Features
 <!-- What are the features included in you app -->
+
+
+
+2/21/2022
+I continue building on the steps from the day before Additions
+
+1- Instead of reading from the json file I send a request to a third party API
+
+2- I read the documentation of the API and I tried on the Chrome or PostMan before I use it in our code.
+
+3- I installed Axios to send an HTTP request to the API.
+
+4- Axios is returning a promise so I should write my code that depend on the request result in the .then function.
+
+5- Axios is returng a huge object so I just care about the data property.
+
+6- I found the API key should not shown in my code so I created .env file and add the API Key there
+
+7- I installed dotenv library the configure it to make our server read the .env file.
+
+8- I created .env.example where I show the required variable for any developer will work on the same project.
+
+9- I created error handler: - I create a function. - I make our server know about it by using app.use - When i want to use I will use it in the .catch function.
+
+10- I created new end point that take the parameter from the URl where I found it inside req.query
