@@ -7,15 +7,24 @@ const axios = require("axios");
 const dotenv = require("dotenv");
 dotenv.config();
 
+const pg = require("pg");
+const databaseURL = process.env.databaseURL;
 const APIKEY = process.env.APIKEY;
 const PORT = process.env.PORT;
 
+const client = new pg.Client(databaseURL);
+
 const app = express();
 
+app.use(express.json());
 app.get('/' , homeHandler);
 app.get('/favorite' , favoriteHandler);
 app.get("/search", searchHandler);
 app.get("/trending", trendingHandler);
+app.post("/addMovies", addMoviesHandler);
+app.get("/getMovies", getMoviesHandler);
+
+
 
 
 
@@ -81,6 +90,33 @@ function trendingHandler(req, res){
     })
 
 }
+
+function addMoviesHandler(req, res){
+    const movie = req.body;
+     console.log(movie);
+
+    const sql = `INSERT INTO movieslibrary(title, poster_path, overview, comment) VALUES($1, $2, $3, $4) RETURNING *`
+    const values = [movie.title, movie.poster_path, movie.overview, movie.comment]
+    client.query(sql, values).then((result)=>{
+        return res.status(201).json(result.rows);
+    }).catch((error) => {
+        errorHandler(error, req, res);
+    });
+};
+
+
+function getMoviesHandler(req, res){
+    const sql = `SELECT * FROM movieslibrary`;
+
+    client.query(sql).then((result) => {
+        return res.status(200).json(result.rows);
+    }).catch((error) => {
+        errorHandler(error, req, res);
+    });
+};
+// test
+
+
 function favoriteHandler(req , res){
     res.send("Welcome to Favorite Page");
 }
@@ -93,8 +129,12 @@ function serverErrorHandler(req, res){
     return res.status(500).json(moveisd.error);
 }
 
-app.listen(3000 , () => {
-    console.log("listen to 3000");
+
+client.connect().then(()=> {
+    app.listen(3001 , () => {
+        console.log(`listen to ${PORT}`);
+    })
+
 })
 
 function errorHandler(error,req,res){
