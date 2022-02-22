@@ -4,7 +4,7 @@
 
 ## WRRC
 Add an image of your WRRC here
-![image](assets/Movies_Life_Cycle.png)
+![image](assets/movies_request.png)
 ## Overview
 
 ## Getting Started
@@ -47,3 +47,23 @@ I continue building on the steps from the day before Additions
 9- I created error handler: - I create a function. - I make our server know about it by using app.use - When i want to use I will use it in the .catch function.
 
 10- I created new end point that take the parameter from the URl where I found it inside req.query
+
+
+2/22/2022
+1- Install PostgreSQL
+
+2- I run mt postgres server (sqlstart)
+
+3- psql then create a database (CREATE DATABASE name-of-the-database)
+
+4- I Created the database URL
+
+5- Do the configurations for pg (require, new pg.Client, clint.connect)
+
+6- End the take a post request
+
+7- I put **app.use(express.json())** (top of the all end points)
+
+8- build the function that insert in database
+
+9- build a function that get data from my table in database
