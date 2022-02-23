@@ -13,8 +13,6 @@ Add an image of your WRRC here
 
 2- npm install express
 
-3- 
-
 4- app.listen(PORT, ()=>{ console.log("Anything") })
 
 5- I can create end points (ex: app.get("/", homeHandler))
@@ -67,3 +65,10 @@ I continue building on the steps from the day before Additions
 8- build the function that insert in database
 
 9- build a function that get data from my table in database
+
+2/23/2022
+1- I built an end point to get a specific record from the database
+
+2- I built an end point to update a specific record in the database
+
+3- I built an end point to delete a specific record from database based on the id

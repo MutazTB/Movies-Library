@@ -23,7 +23,9 @@ app.get("/search", searchHandler);
 app.get("/trending", trendingHandler);
 app.post("/addMovies", addMoviesHandler);
 app.get("/getMovies", getMoviesHandler);
-
+app.get("/getMovie/:id", getMovieHandler)
+app.put("/UPDATE/:id",updateHandler);
+app.delete("/DELETE/:id", deleteHandler);
 
 
 
@@ -114,7 +116,48 @@ function getMoviesHandler(req, res){
         errorHandler(error, req, res);
     });
 };
-// test
+
+function getMovieHandler(req, res){
+    let id = req.params.id;
+    
+    const sql = `SELECT * FROM movieslibrary WHERE id=$1;`;
+    const values = [id];
+
+    client.query(sql, values).then((result) => {
+        return res.status(200).json(result.rows);
+    }).catch((error) => {
+        errorHandler(error, req, res)
+    })
+};
+
+function updateHandler(req, res){
+    const id = req.params.id;
+    const movie = req.body;
+   
+    const sql = `UPDATE movieslibrary SET title=$1, poster_path=$2,overview=$3, comment=$4 WHERE id=$5 RETURNING *;`;
+    const values = [movie.title, movie.poster_path, movie.overview, movie.comment ,id];
+
+    client.query(sql, values).then((result) => {
+        return res.status(200).json(result.rows);
+    }).catch((error) => {
+        errorHandler(error, req, res);
+    })
+
+};
+
+function deleteHandler(req, res){
+    const id = req.params.id
+
+    const sql = `DELETE FROM movieslibrary WHERE id=$1;`
+    const values = [id];
+
+    client.query(sql, values).then(() => {
+        return res.status(204).json({})
+    }).catch(error => {
+        errorHandler(error, req, res);
+    })
+};
+
 
 
 function favoriteHandler(req , res){
