@@ -14,6 +14,11 @@ const PORT = process.env.PORT;
 
 const client = new pg.Client(databaseURL);
 
+// const client = new pg.Client({
+//     connectionString: process.env.DATABASE_URL,
+//     ssl: { rejectUnauthorized: false }
+// });
+
 const app = express();
 
 app.use(express.json());
@@ -23,8 +28,6 @@ app.get("/search", searchHandler);
 app.get("/trending", trendingHandler);
 app.post("/addMovies", addMoviesHandler);
 app.get("/getMovies", getMoviesHandler);
-
-
 
 
 
@@ -88,7 +91,6 @@ function trendingHandler(req, res){
     }).catch(error => {
         serverErrorHandler(req, res);
     })
-
 }
 
 function addMoviesHandler(req, res){
