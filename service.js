@@ -33,8 +33,6 @@ app.put("/UPDATE/:id",updateHandler);
 app.delete("/DELETE/:id", deleteHandler);
 
 
-
-
 app.use("*", serverErrorHandler);
 app.use("*", notFoundHandler);
 
@@ -95,7 +93,6 @@ function trendingHandler(req, res){
     }).catch(error => {
         serverErrorHandler(req, res);
     })
-
 }
 
 function addMoviesHandler(req, res){
