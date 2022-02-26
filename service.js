@@ -10,7 +10,7 @@ dotenv.config();
 const pg = require("pg");
 const databaseURL = process.env.databaseURL;
 const APIKEY = process.env.APIKEY;
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3001;
 
 const client = new pg.Client(databaseURL);
 
