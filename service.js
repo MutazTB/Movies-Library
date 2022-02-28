@@ -130,7 +130,7 @@ function serverErrorHandler(req, res){
 
 
 client.connect().then(()=> {
-    app.listen(PORT || 5000 , () => {
+    app.listen(PORT , () => {
         console.log(`listen to ${PORT}`);
     })
 
