@@ -46,25 +46,25 @@ function moviesData(id ,title , poster_path , overview){
 function homeHandler(req , res){
 
    // return res.send("Hello World");
-    let result =[];
+//     let result =[];
     
-moveisd.data.foreach((value) => {
-    let firstData = new moviesData(value.id, value.title , value.poster_path , value.overview);
-         result.push(firstData);
+// dta.data.foreach((value) => {
+//     let firstData = new moviesData(value.id, value.title , value.poster_path , value.overview);
+//          result.push(firstData);
+// })
+
+// return res.json(data.data);
+
+    axios.get(`https://api.themoviedb.org/3/movie/550?api_key=${APIKEY}`)
+    .then(apiResponse => {
+        apiResponse.data.moveisd.map((value) => {
+        let firstData = new moviesData(value.id, value.title , value.poster_path , value.overview);
+        result.push(firstData);
+    })
+    return res.status(200).json(result);
+}).catch(error => {
+    errorHandler(error, req, res);
 })
-
-return res.json(moveisd.data);
-
-//     axios.get(`https://api.themoviedb.org/3/movie/550?api_key=${APIKEY}`)
-//     .then(apiResponse => {
-//         apiResponse.data.moveisd.map((value) => {
-//         let firstData = new moviesData(value.id, value.title , value.poster_path , value.overview);
-//         result.push(firstData);
-//     })
-//     return res.status(200).json(apiResponse.data);
-// }).catch(error => {
-//     errorHandler(error, req, res);
-//})
     // moveisd.data.forEach((value) => {
     //     let firstData = new moviesData(value.title , value.poster_path , value.overview);
     //     result.push(firstData);
