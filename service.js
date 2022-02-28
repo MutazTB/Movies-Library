@@ -8,7 +8,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const pg = require("pg");
-const databaseURL = process.env.databaseURL;
+const databaseURL = process.env.DATABASE_URL;
 const APIKEY = process.env.APIKEY;
 const PORT = process.env.PORT;
 
