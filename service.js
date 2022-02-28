@@ -10,7 +10,7 @@ dotenv.config();
 const pg = require("pg");
 const databaseURL = process.env.databaseURL;
 const APIKEY = process.env.APIKEY;
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 //const client = new pg.Client(databaseURL);
 
@@ -176,7 +176,7 @@ function serverErrorHandler(req, res){
 
 
 client.connect().then(()=> {
-    app.listen(PORT , () => {
+    app.listen(PORT || 5000 , () => {
         console.log(`listen to ${PORT}`);
     })
 
