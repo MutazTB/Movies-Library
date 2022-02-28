@@ -15,7 +15,7 @@ const PORT = process.env.PORT;
 //const client = new pg.Client(databaseURL);
 
 const client = new pg.Client({
-    connectionString: process.env.databaseURL,
+    connectionString: databaseURL,
     ssl: { rejectUnauthorized: false }
 });
 
