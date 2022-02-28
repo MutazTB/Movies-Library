@@ -61,7 +61,7 @@ function homeHandler(req , res){
         let firstData = new moviesData(value.id, value.title , value.poster_path , value.overview);
         result.push(firstData);
     })
-    return res.status(200).json(result);
+    return res.status(200).json(data.data);
 }).catch(error => {
     errorHandler(error, req, res);
 })
