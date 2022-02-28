@@ -45,15 +45,15 @@ function moviesData(id ,title , poster_path , overview){
 
 function homeHandler(req , res){
 
-    return res.send("Hello World");
-//     let result =[];
+   // return res.send("Hello World");
+    let result =[];
     
-// dta.data.foreach((value) => {
-//     let firstData = new moviesData(value.id, value.title , value.poster_path , value.overview);
-//          result.push(firstData);
-// })
+moveisd.data.foreach((value) => {
+    let firstData = new moviesData(value.id, value.title , value.poster_path , value.overview);
+         result.push(firstData);
+})
 
-// return res.json(data.data);
+return res.json(moveisd.data);
 
 //     axios.get(`https://api.themoviedb.org/3/movie/550?api_key=${APIKEY}`)
 //     .then(apiResponse => {
