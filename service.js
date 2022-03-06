@@ -12,12 +12,12 @@ const databaseURL = process.env.DATABASE_URL;
 const APIKEY = process.env.APIKEY;
 const PORT = process.env.PORT;
 
-//const client = new pg.Client(databaseURL);
+const client = new pg.Client(databaseURL);
 
-const client = new pg.Client({
-    connectionString: databaseURL,
-    ssl: { rejectUnauthorized: false }
-});
+// const client = new pg.Client({
+//     connectionString: databaseURL,
+//     ssl: { rejectUnauthorized: false }
+// });
 
 const app = express();
 
@@ -73,36 +73,48 @@ function homeHandler(req , res){
 }
 
 
-function searchHandler(req, res){
-    const search = req.query.Movie    
-    axios.get(` https://api.themoviedb.org/3/search/company?api_key=${APIKEY}&query=${search}`)
-    .then(apiResponse => {
-        apiResponse.data.moveisd.map((value) => {
-        let firstData = new moviesData(value.id || "N/A", value.title || "N/A" , value.poster_path || "N/A" , value.overview || "N/A" );
-        result.push(firstData);
+function searchHandler(req, res) {
+    // console.log(req);
+    let search = req.query.query;
+    let result = [];
+    axios
+      .get(
+        `https://api.themoviedb.org/3/search/company?api_key=${APIKEY}&query=${search}`
+      )
+      .then((results) => {
+        res.send(results.data.results);
+      })
+      .catch((error) => {
+        errorHandler(error, req, res);
+      });
+  }
+
+function trendingHandler(req, res) {
+    let result = [];
+    let trinding = axios
+      .get(
+        ` https://api.themoviedb.org/3/search/company?api_key=${APIKEY}&language=en-US`
+      )
+      .then((apiResponse) => {
+        apiResponse.data.results.map((value) => {
+          let newData = new moviesData(
+            value.id || "N/A",
+            value.title || "N/A",
+            value.poster_path || "N/A",
+            value.overview || "N/A"
+          );
+          result.push(newData);
         });
-        return res.status(200).json(moveisd.data);
-    }).catch(error => {
-        serverErrorHandler(req, res);
-    })
+        return res.status(200).json(result);
+      })
+      .catch((error) => {
+        errorHandler(error, req, res);
+      });
+  }
 
-}
 
-// https://api.themoviedb.org/3/trending/all/day?api_key=<<api_key>>
 
-function trendingHandler(req, res){
-    const trending = req.query.Movie    
-    axios.get(` https://api.themoviedb.org/3/search/company?api_key=${APIKEY}`)
-    .then(apiResponse => {
-        apiResponse.data.moveisd.map((value) => {
-        let firstData = new moviesData(value.id || "N/A", value.title || "N/A" , value.poster_path || "N/A" , value.overview || "N/A" );
-        result.push(firstData);
-        });
-        return res.status(200).json(moveisd.data);
-    }).catch(error => {
-        serverErrorHandler(req, res);
-    })
-}
+
 
 function addMoviesHandler(req, res){
     const movie = req.body;
