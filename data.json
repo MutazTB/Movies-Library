@@ -1,9 +1,105 @@
 {
-    "data" :[
-{
-    "title": "Spider-Man: No Way Home",
-    "poster_path": "/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
-    "overview": "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man."
-}
-]
+    "data": [
+       
+        {
+            "title": "The Batman",
+            "poster_path": "/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+            "overview": "In his second year of fighting crime, Batman uncov…hile facing a serial killer known as the Riddler."
+        },
+        {
+            "title": "Spider-Man: No Way Home",
+            "poster_path": "/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
+            "overview": "Peter Parker is unmasked and no longer able to sep…to discover what it truly means to be Spider-Man."
+        },
+        {
+            "title": "The King's Man",
+            "poster_path": "/aq4Pwv5Xeuvj6HZKtxyd23e6bE9.jpg",
+            "overview": "As a collection of history's worst tyrants and cri…ons, one man must race against time to stop them."
+        },
+        {
+            "title": "N/A",
+            "poster_path": "/izIMqapegdEZj0YVDyFATPR8adh.jpg",
+            "overview": "In this sequel to 'Vikings,' a hundred years have …ises to forge its own destiny — and make history."
+        },
+        {
+            "title": "N/A",
+            "poster_path": "/jtnfNzqZwN4E32FGGxx1YZaBWWf.jpg",
+            "overview": "A group of high school students navigate love and … a world of drugs, sex, trauma, and social media."
+        },
+        {
+            "title": "West Side Story",
+            "poster_path": "/zeAZTPxV5xZRNEX3rZotnsp7IVo.jpg",
+            "overview": "Two youngsters from rival New York City gangs fall…en their respective friends build toward tragedy."
+        },
+        {
+            "title": "Scream",
+            "poster_path": "/kZNHR1upJKF3eTzdgl5V8s8a4C3.jpg",
+            "overview": "Twenty-five years after a streak of brutal murders…to resurrect secrets from the town’s deadly past."
+        },
+        {
+            "title": "No Exit",
+            "poster_path": "/vDHsLnOWKlPGmWs0kGfuhNF4w5l.jpg",
+            "overview": "Stranded at a rest stop in the mountains during a …ggle to identify who among them is the kidnapper."
+        },
+        {
+            "title": "Against the Ice",
+            "poster_path": "/6FSGYvPEhIx3ThOikGqHmKxeyNN.jpg",
+            "overview": "In 1909, two explorers fight to survive after they…on a Denmark expedition in ice-covered Greenland."
+        },
+        {
+            "title": "Blacklight",
+            "poster_path": "/bv9dy8mnwftdY2j6gG39gCfSFpV.jpg",
+            "overview": "Travis Block is a shadowy Government agent who spe…ranks that reaches the highest echelons of power."
+        },
+        {
+            "title": "Texas Chainsaw Massacre",
+            "poster_path": "/meRIRfADEGVo65xgPO6eZvJ0CRG.jpg",
+            "overview": "In this sequel, influencers looking to breathe new…n infamous killer who wears a mask of human skin."
+        },
+        {
+            "title": "Uncharted",
+            "poster_path": "/sqLowacltbZLoCa4KYye64RvvdQ.jpg",
+            "overview": "A young street-smart, Nathan Drake and his wisecra…lues that may lead to Nathan’s long-lost brother."
+        },
+        {
+            "title": "Encanto",
+            "poster_path": "/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg",
+            "overview": "The tale of an extraordinary family, the Madrigals…might just be her exceptional family's last hope."
+        },
+        {
+            "title": "Eternals",
+            "poster_path": "/zByhtBvX99ZiCQhac1sh9d9r6nb.jpg",
+            "overview": "The Eternals are a team of ancient aliens who have…ainst mankind’s most ancient enemy, the Deviants."
+        },
+        {
+            "title": "The Matrix Resurrections",
+            "poster_path": "/8c4a8kE7PizaGQQnditMmI1xbRp.jpg",
+            "overview": "Plagued by strange memories, Neo's life takes an u…urn when he finds himself back inside the Matrix."
+        },
+        {
+            "title": "N/A",
+            "poster_path": "/aiy35Evcofzl7hASZZvsFgltHTX.jpg",
+            "overview": "Several hundred years ago, humans were nearly exte…single Titan and take revenge for all of mankind."
+        },
+        {
+            "title": "N/A",
+            "poster_path": "/vUUqzWa2LnHIVqkaKVlVGkVcZIW.jpg",
+            "overview": "A gangster family epic set in 1919 Birmingham, Eng… Tommy Shelby, who means to move up in the world."
+        },
+        {
+            "title": "N/A",
+            "poster_path": "/wrCVHdkBlBWdJUZPvnJWcBRuhSY.jpg",
+            "overview": "It is the Taisho Period in Japan. Tanjiro, a kindh…an, and kill the demon that massacred his family."
+        },
+        {
+            "title": "N/A",
+            "poster_path": "/xf9wuDcqlUPWABZNeDKPbZUjWx0.jpg",
+            "overview": "Sheriff's deputy Rick Grimes awakens from a coma t…nd encounters many other survivors along the way."
+        },
+        {
+            "title": "Licorice Pizza",
+            "poster_path": "/jD98aUKHQZNAmrk0wQQ9wmNQPnP.jpg",
+            "overview": "The story of Alana Kane and Gary Valentine growing…n of first love in the San Fernando Valley, 1973."
+        }
+    ]
 }
