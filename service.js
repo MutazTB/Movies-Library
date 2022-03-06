@@ -12,12 +12,12 @@ const databaseURL = process.env.DATABASE_URL;
 const APIKEY = process.env.APIKEY;
 const PORT = process.env.PORT;
 
-const client = new pg.Client(databaseURL);
+//const client = new pg.Client(databaseURL);
 
-// const client = new pg.Client({
-//     connectionString: databaseURL,
-//     ssl: { rejectUnauthorized: false }
-// });
+const client = new pg.Client({
+    connectionString: databaseURL,
+    ssl: { rejectUnauthorized: false }
+});
 
 const app = express();
 
